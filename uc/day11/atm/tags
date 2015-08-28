@@ -1,0 +1,40 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ACCOUNT_H_	account.h	2;"	d
+Account	account.h	/^struct Account{$/;"	s
+Account::balance	account.h	/^  double   balance;$/;"	m	struct:Account	access:public
+Account::id	account.h	/^  int      id;$/;"	m	struct:Account	access:public
+Account::name	account.h	/^  char     name[30];$/;"	m	struct:Account	access:public
+Account::passwd	account.h	/^  char     passwd[30];$/;"	m	struct:Account	access:public
+Msg	service.h	/^struct Msg{$/;"	s
+Msg::key	service.h	/^  key_t key;$/;"	m	struct:Msg	access:public
+Msg::msgid	service.h	/^  int   msgid;$/;"	m	struct:Msg	access:public
+SERVICE_H_	service.h	2;"	d
+Service	service.h	/^struct Service{$/;"	s
+Service::account	service.h	/^  struct Account account;;$/;"	m	struct:Service	typeref:struct:Service::Account	access:public
+Service::mtype	service.h	/^  long    mtype;$/;"	m	struct:Service	access:public
+account	service.h	/^  struct Account account;;$/;"	m	struct:Service	typeref:struct:Service::Account	access:public
+balance	account.h	/^  double   balance;$/;"	m	struct:Account	access:public
+id	account.h	/^  int      id;$/;"	m	struct:Account	access:public
+key	service.h	/^  key_t key;$/;"	m	struct:Msg	access:public
+main	client.c	/^int main()$/;"	f
+main	server.c	/^int main()$/;"	f
+msg1	server.c	/^struct Msg msg1, msg2;$/;"	v	typeref:struct:Msg
+msg2	server.c	/^struct Msg msg1, msg2;$/;"	v	typeref:struct:
+msgid	service.h	/^  int   msgid;$/;"	m	struct:Msg	access:public
+mtype	service.h	/^  long    mtype;$/;"	m	struct:Service	access:public
+name	account.h	/^  char     name[30];$/;"	m	struct:Account	access:public
+passwd	account.h	/^  char     passwd[30];$/;"	m	struct:Account	access:public
+service_init	service.c	/^int service_init( struct Msg* msg, const char* pathname, int proid, int type)$/;"	f	signature:( struct Msg* msg, const char* pathname, int proid, int type)
+service_init	service.h	/^int service_init( struct Msg* msg, const char* pathname, int proid, int type);$/;"	p	signature:( struct Msg* msg, const char* pathname, int proid, int type)
+service_recv	service.c	/^struct Account* service_recv(const struct Msg *msg, int type)$/;"	f	signature:(const struct Msg *msg, int type)
+service_recv	service.h	/^struct Account* service_recv(const struct Msg *msg, int type);$/;"	p	signature:(const struct Msg *msg, int type)
+service_remove	service.c	/^int service_remove(struct Msg *msg)$/;"	f	signature:(struct Msg *msg)
+service_remove	service.h	/^int service_remove(struct Msg *msg);$/;"	p	signature:(struct Msg *msg)
+service_send	service.c	/^int service_send(struct Account acc, const struct Msg *msg, int type)$/;"	f	signature:(struct Account acc, const struct Msg *msg, int type)
+service_send	service.h	/^int service_send(struct Account acc, const struct Msg *msg, int type);$/;"	p	signature:(struct Account acc, const struct Msg *msg, int type)
+sig_exit	server.c	/^void sig_exit(int signo)$/;"	f	signature:(int signo)

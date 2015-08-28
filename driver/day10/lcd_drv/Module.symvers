@@ -1,0 +1,3 @@
+0x00000000	cfb_copyarea	/home/rick/program/kernel/day10/lcd_drv/cfbcopyarea	EXPORT_SYMBOL
+0x00000000	cfb_imageblit	/home/rick/program/kernel/day10/lcd_drv/cfbimgblt	EXPORT_SYMBOL
+0x00000000	cfb_fillrect	/home/rick/program/kernel/day10/lcd_drv/cfbfillrect	EXPORT_SYMBOL

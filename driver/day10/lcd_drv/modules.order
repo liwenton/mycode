@@ -1,0 +1,4 @@
+kernel//home/rick/program/kernel/day10/lcd_drv/lcd_drv.ko
+kernel//home/rick/program/kernel/day10/lcd_drv/cfbfillrect.ko
+kernel//home/rick/program/kernel/day10/lcd_drv/cfbcopyarea.ko
+kernel//home/rick/program/kernel/day10/lcd_drv/cfbimgblt.ko

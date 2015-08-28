@@ -1,0 +1,1 @@
+cmd_/home/rick/program/kernel/day06/buttons_irq/buttons_irq.ko := arm-linux-ld -EL -r  -T /home/rick/program/linux/linux-3.8/scripts/module-common.lds --build-id  -o /home/rick/program/kernel/day06/buttons_irq/buttons_irq.ko /home/rick/program/kernel/day06/buttons_irq/buttons_irq.o /home/rick/program/kernel/day06/buttons_irq/buttons_irq.mod.o

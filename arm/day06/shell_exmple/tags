@@ -1,0 +1,134 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AFLAGS	makefile	/^AFLAGS=-march=armv5te $/;"	m
+AS	makefile	/^AS=arm-linux-as$/;"	m
+BIN	makefile	/^BIN=$(PROG).bin$/;"	m
+CC	makefile	/^CC=arm-linux-gcc$/;"	m
+CFLAGS	makefile	/^CFLAGS=-march=armv5te -nostdlib$/;"	m
+FL_SECTION_ENTRY	setmmu_table.c	19;"	d	file:
+GPA0CON	uart.h	6;"	d
+GPA0PUD	uart.h	7;"	d
+GPC1CON	led.h	5;"	d
+GPC1DAT	led.h	7;"	d
+GPC1PUD	led.h	9;"	d
+GPH0CFG	gpio.h	5;"	d
+GPH0DAT	gpio.h	6;"	d
+GPH0PUD	gpio.h	7;"	d
+IRQ_EXTERN	irq.h	25;"	d
+IRQ_EXTERN	irq.h	27;"	d
+LD	makefile	/^LD=arm-linux-ld$/;"	m
+LDFLAGS	makefile	/^LDFLAGS=-nostartfiles -nostdlib$/;"	m
+MAX_NUM	shell.c	13;"	d	file:
+NFADDR	nand.h	12;"	d
+NFCMMD	nand.h	10;"	d
+NFCONF	nand.h	6;"	d
+NFCONT	nand.h	8;"	d
+NFDATA	nand.h	14;"	d
+NFDATAB	nand.h	15;"	d
+NFSTAT	nand.h	17;"	d
+NF_PAGE_SIZE	nand.h	20;"	d
+OBJCOPY	makefile	/^OBJCOPY=arm-linux-objcopy$/;"	m
+OBJS	makefile	/^OBJS=start.o dram.o irq.o setmmu_table.o \\$/;"	m
+PCLK	uart.h	27;"	d
+PROG	makefile	/^PROG=shell$/;"	m
+UBRDIV0	uart.h	22;"	d
+UCON0	uart.h	11;"	d
+UDIVSLOT0	uart.h	24;"	d
+UFCON0	uart.h	13;"	d
+ULCON0	uart.h	9;"	d
+UMCON0	uart.h	15;"	d
+URXH0	uart.h	20;"	d
+UTRSTAT0	uart.h	17;"	d
+UTXH0	uart.h	19;"	d
+__A_STRCMP_H__	a_strcmp.h	3;"	d
+__CMD_H__	cmd.h	2;"	d
+__DELAY_H__	delay.h	3;"	d
+__GPIO_H__	gpio.h	3;"	d
+__IRQ_C__	irq.c	20;"	d	file:
+__IRQ_H__	irq.h	22;"	d
+__ITOA_H__	itoa.h	3;"	d
+__LED_H__	led.h	3;"	d
+__NAND_H__	nand.h	3;"	d
+__UART_H__	uart.h	3;"	d
+_cmd	cmd.h	/^typedef struct _cmd {$/;"	s
+_dabt_handler	vector.s	/^_dabt_handler:$/;"	l
+_dabt_hdl	vector.s	/^_dabt_hdl:$/;"	l
+_fiq_handler	vector.s	/^_fiq_handler:$/;"	l
+_fiq_hdl	vector.s	/^_fiq_hdl:$/;"	l
+_irq_handler	vector.s	/^_irq_handler:$/;"	l
+_irq_hdl	vector.s	/^_irq_hdl:$/;"	l
+_pabt_handler	vector.s	/^_pabt_handler:$/;"	l
+_pabt_hdl	vector.s	/^_pabt_hdl:$/;"	l
+_reset_hdl	vector.s	/^_reset_hdl:$/;"	l
+_swi_handler	vector.s	/^_swi_handler:$/;"	l
+_swi_hdl	vector.s	/^_swi_hdl:$/;"	l
+_und_handler	vector.s	/^_und_handler:$/;"	l
+_und_hdl	vector.s	/^_und_hdl:$/;"	l
+a_strcmp	a_strcmp.s	/^a_strcmp:$/;"	l
+base	setmmu_table.c	/^unsigned int base;$/;"	v
+bss_end	start.s	/^bss_end:$/;"	l
+bss_start	start.s	/^bss_start:$/;"	l
+buf	shell.c	/^static unsigned char buf[MAX_NUM];$/;"	v	file:
+c_swi_handler	irq.c	/^void c_swi_handler(unsigned int num, int *param)$/;"	f
+clbss_l	start.s	/^clbss_l:$/;"	l
+clear_bss	start.s	/^clear_bss:$/;"	l
+cmd	cmd.h	/^    void (*cmd)(void);$/;"	m	struct:_cmd
+cmd_boot	cmd.c	/^void cmd_boot(void)$/;"	f
+cmd_find	cmd.c	/^cmd_t *cmd_find(const char *str)$/;"	f
+cmd_led_off	cmd.c	/^static void cmd_led_off(void)$/;"	f	file:
+cmd_led_on	cmd.c	/^static void cmd_led_on(void)$/;"	f	file:
+cmd_nandbad	cmd.c	/^void cmd_nandbad(void)$/;"	f
+cmd_nandid	cmd.c	/^void cmd_nandid(void)$/;"	f
+cmd_nread	cmd.c	/^void cmd_nread(void)$/;"	f
+cmd_swi1	cmd.c	/^void cmd_swi1(void)$/;"	f
+cmd_swi2	cmd.c	/^void cmd_swi2(void)$/;"	f
+cmd_t	cmd.h	/^}cmd_t;$/;"	t	typeref:struct:_cmd
+cmd_tbl	cmd.c	/^static const cmd_t cmd_tbl[] =$/;"	v	file:
+cmd_tbl_size	cmd.c	/^static int cmd_tbl_size = sizeof(cmd_tbl)\/$/;"	v	file:
+cmp_loop	a_strcmp.s	/^cmp_loop:$/;"	l
+delay	delay.c	/^void delay(int num)$/;"	f
+disable_l2cache	start.s	/^disable_l2cache:$/;"	l
+enable_l2cache	start.s	/^enable_l2cache:$/;"	l
+find_lock_val	dram.s	/^find_lock_val:$/;"	l
+find_lock_val1	dram.s	/^find_lock_val1:$/;"	l
+install_copy_loop	vector.s	/^install_copy_loop:$/;"	l
+install_vector_handler	vector.s	/^install_vector_handler:$/;"	l
+itoa	itoa.c	/^void itoa(char *buf, unsigned int num)$/;"	f
+itoa_buf	shell.c	/^static char itoa_buf[16];$/;"	v	file:
+kernel_func_t	cmd.c	/^typedef void (*kernel_func_t)(int r0, int r1, int r2);$/;"	t	file:
+led_init	led.c	/^void led_init(void)$/;"	f
+led_off	led.c	/^void led_off(void)$/;"	f
+led_on	led.c	/^void led_on(void)$/;"	f
+lowlevel_init	start.s	/^lowlevel_init:$/;"	l
+main	shell.c	/^void main(void)$/;"	f
+mem_ctrl_asm_init	dram.s	/^mem_ctrl_asm_init:$/;"	l
+mmu_on	start.s	/^mmu_on:$/;"	l
+name	cmd.h	/^    const char *name;$/;"	m	struct:_cmd
+nand_block_check	nand.c	/^int nand_block_check(int blk)$/;"	f
+nand_ce_disable	nand.c	/^void nand_ce_disable(void)$/;"	f
+nand_ce_enable	nand.c	/^void nand_ce_enable(void)$/;"	f
+nand_init	nand.c	/^void nand_init(void)$/;"	f
+nand_page_oob_read	nand.c	/^void nand_page_oob_read(char *buf, int page, int len)$/;"	f
+nand_page_read	nand.c	/^void nand_page_read(unsigned int *buf,$/;"	f
+nand_read_id	nand.c	/^void nand_read_id(void)$/;"	f
+nand_stat_clear	nand.c	/^void nand_stat_clear(void)$/;"	f
+nand_stat_wait	nand.c	/^void nand_stat_wait(void)$/;"	f
+set_l2cache_auxctrl_cycle	start.s	/^set_l2cache_auxctrl_cycle:$/;"	l
+set_mmu_table	setmmu_table.c	/^void set_mmu_table(unsigned int *addr)$/;"	f
+start	start.s	/^start:$/;"	l
+start_armboot	start.s	/^start_armboot:$/;"	l
+str1_end	a_strcmp.s	/^str1_end:$/;"	l
+swi_test1	vector.s	/^swi_test1:$/;"	l
+swi_test2	vector.s	/^swi_test2:$/;"	l
+system_clock_init	start.s	/^system_clock_init:$/;"	l
+uart0_getc	uart.c	/^unsigned char uart0_getc(void)$/;"	f
+uart0_gets	uart.c	/^void uart0_gets(char *buf, int len)$/;"	f
+uart0_init	uart.c	/^void uart0_init(void)$/;"	f
+uart0_putc	uart.c	/^void uart0_putc(char ch)$/;"	f
+uart0_puts	uart.c	/^void uart0_puts(char *str)$/;"	f
+vector_end	vector.s	/^vector_end:$/;"	l
+vector_start	vector.s	/^vector_start:$/;"	l

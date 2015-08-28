@@ -1,0 +1,1 @@
+cmd_/home/rick/program/kernel/day11/miscdeivce/misc_led_drv.ko := arm-linux-ld -EL -r  -T /home/rick/program/linux/linux-2.6.35.7/scripts/module-common.lds --build-id -o /home/rick/program/kernel/day11/miscdeivce/misc_led_drv.ko /home/rick/program/kernel/day11/miscdeivce/misc_led_drv.o /home/rick/program/kernel/day11/miscdeivce/misc_led_drv.mod.o

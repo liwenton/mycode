@@ -1,0 +1,4 @@
+kernel//home/rick/program/kernel/day10/webee_lcd_drv/webee210_lcd.ko
+kernel//home/rick/program/kernel/day10/webee_lcd_drv/cfbfillrect.ko
+kernel//home/rick/program/kernel/day10/webee_lcd_drv/cfbcopyarea.ko
+kernel//home/rick/program/kernel/day10/webee_lcd_drv/cfbimgblt.ko

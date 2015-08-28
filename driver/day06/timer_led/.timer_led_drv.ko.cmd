@@ -1,0 +1,1 @@
+cmd_/home/rick/program/kernel/day06/timer_led/timer_led_drv.ko := arm-linux-ld -EL -r  -T /home/rick/program/linux/linux-3.8/scripts/module-common.lds --build-id  -o /home/rick/program/kernel/day06/timer_led/timer_led_drv.ko /home/rick/program/kernel/day06/timer_led/timer_led_drv.o /home/rick/program/kernel/day06/timer_led/timer_led_drv.mod.o

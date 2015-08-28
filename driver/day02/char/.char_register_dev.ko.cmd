@@ -1,0 +1,1 @@
+cmd_/home/rick/program/kernel/day02/char/char_register_dev.ko := arm-linux-ld -EL -r  -T /home/rick/program/linux/linux-3.8/scripts/module-common.lds --build-id  -o /home/rick/program/kernel/day02/char/char_register_dev.ko /home/rick/program/kernel/day02/char/char_register_dev.o /home/rick/program/kernel/day02/char/char_register_dev.mod.o

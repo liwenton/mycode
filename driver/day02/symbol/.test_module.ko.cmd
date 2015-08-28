@@ -1,0 +1,1 @@
+cmd_/home/rick/program/kernel/day01/v3.0/test_module.ko := arm-linux-ld -EL -r  -T /home/rick/program/linux/linux-3.8/scripts/module-common.lds --build-id  -o /home/rick/program/kernel/day01/v3.0/test_module.ko /home/rick/program/kernel/day01/v3.0/test_module.o /home/rick/program/kernel/day01/v3.0/test_module.mod.o

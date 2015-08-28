@@ -1,0 +1,1 @@
+cmd_/home/rick/program/kernel/day04/led_rw/led_user.ko := arm-linux-ld -EL -r  -T /home/rick/program/linux/linux-3.8/scripts/module-common.lds --build-id  -o /home/rick/program/kernel/day04/led_rw/led_user.ko /home/rick/program/kernel/day04/led_rw/led_user.o /home/rick/program/kernel/day04/led_rw/led_user.mod.o

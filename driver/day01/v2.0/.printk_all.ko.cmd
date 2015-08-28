@@ -1,0 +1,1 @@
+cmd_/home/rick/program/kernel/day01/v2.0/printk_all.ko := arm-linux-ld -EL -r  -T /home/rick/program/linux/linux-3.8/scripts/module-common.lds --build-id  -o /home/rick/program/kernel/day01/v2.0/printk_all.ko /home/rick/program/kernel/day01/v2.0/printk_all.o /home/rick/program/kernel/day01/v2.0/printk_all.mod.o

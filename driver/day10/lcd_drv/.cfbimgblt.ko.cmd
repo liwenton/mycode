@@ -1,0 +1,1 @@
+cmd_/home/rick/program/kernel/day10/lcd_drv/cfbimgblt.ko := arm-linux-ld -EL -r  -T /home/rick/program/linux/linux-3.8_webee210/scripts/module-common.lds --build-id  -o /home/rick/program/kernel/day10/lcd_drv/cfbimgblt.ko /home/rick/program/kernel/day10/lcd_drv/cfbimgblt.o /home/rick/program/kernel/day10/lcd_drv/cfbimgblt.mod.o
