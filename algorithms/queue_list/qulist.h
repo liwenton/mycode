@@ -1,23 +1,25 @@
-#ifndef QULIST_H
-#define QULIST_H
+#ifndef __QULIST_H__
+#define __QULIST_H__
 
-struct QUEUENODE{
+typedef struct QUEUENODE{
    int data;
    struct QUEUENODE *next;
 }QueueNode;
 
-struct QUEUE{
+typedef struct QUEUE{
    QueueNode *front;
    QueueNode *rear;
 }Queue;
 
+QueueNode *CreatNode(int data);
+QueueNode *DestroyNode(QueueNode *node);
+void QueueInit(Queue *queue);
+void QueueDel(Queue *queue);
+int  QueueEmpty(Queue *queue);
+void QueuePush(int data, Queue *queue);
+int QueuePop (Queue *queue);
+int QueueTop(Queue *queue);
+int QueueSize(Queue *queue);
 
-void queue_init(List *list);
-void queue_del (List *list);
-int  queue_empty(List *list);
-void queue_push(List *list);
-void queue_pop (List *list);
-int  queue_top (List *list);
-int  queue_size(List *list);
 
 #endif

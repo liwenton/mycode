@@ -2,14 +2,14 @@
 #include <stdio.h>
 
 int main(){
-  struct Queue queue;
-  stack_init(&queue);
+   Queue queue;
+  QueueInit(&queue);
   int i;
   for(i=0;i<7;i++){
-   stack_push(&stack, i+1);
+   QueuePush(i+1, &queue);
   }
-  while(!stack_empty(&stack))
-   printf("%d\n",stack_pop(&stack));
-   stack_del(&stack);
-   printf("%s\n",!stack_empty(&stack)?"full":"empty");
+  while(!QueueEmpty(&queue))
+   printf("%d\n",QueuePop(&queue));
+   QueueDel(&queue);
+   printf("%s\n",!QueueEmpty(&queue)?"full":"empty");
 }

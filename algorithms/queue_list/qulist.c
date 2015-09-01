@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "qulist.h"
 
-static QueueNode *creat_node(int data)
+QueueNode *CreatNode(int data)
 {
    QueueNode *node=malloc(sizeof(QueueNode));
    node->data=data;
@@ -11,7 +11,7 @@ static QueueNode *creat_node(int data)
    return node;
 }
 
-static QueueList *destroy_node(QueueList *node)
+QueueNode *DestroyNode(QueueNode *node)
 {
    QueueNode *next=node->next;
    free(node);
@@ -19,59 +19,70 @@ static QueueList *destroy_node(QueueList *node)
    return next;  
 }
 
-void queue_init(Queue *queue)
+void QueueInit(Queue *queue)
 {
    queue->front=NULL;
    queue->rear=NULL;
 }
 
-void queue_del (Queue *queue)
+void QueueDel(Queue *queue)
 {
    while(queue->front)
    {
-     queue->front=destroy_node(queue->front);
+     queue->front=DestroyNode(queue->front);
      queue->rear=NULL;
    }
 }
 
-int  queue_empty(Queue *queue)
+int QueueEmpty(Queue *queue)
 {
    return (!queue->front) && (!queue->rear);
 }
-void queue_push(int data, Queue *queue)
-{
-   QueueNode *node=create_node(data);
-   if(queue->rear)
-     queue->rear->next=node; //改原来队尾的next
 
-   else
+
+void QueuePush(int data, Queue *queue)
+{
+   QueueNode *node= CreatNode(data);
+
+   	if(queue->rear)
+	{
+     	queue->rear->next=node; //改原来队尾的next
+		queue->rear=node;
+	}
+   	else
+   	{
      queue->front=node;
      queue->rear=node;
+	}
    
 }
 
-int queue_pop (Queue *queue);
+int QueuePop (Queue *queue)
 {  
-     int data= queue->front->data;
-    // QueueNode *node=queue->front;
-     queue->front=destroy_node(queue->front);
-     if(!queue->front)
-       queue->rear=NULL;
-     return data;     
+	int data= queue->front->data;
+//	QueueNode *node=queue->front;
+	queue->front=DestroyNode(queue->front);
+
+    if(!queue->front)
+	{
+		queue->rear=NULL;
+	}
+
+	return data;     
 }
-int  queue_top (Queue *queue)
+
+int QueueTop(Queue *queue)
 {
     return queue->front->data;
 }
 
-int  queue_size(List *list)
+int	QueueSize(Queue *queue)
 {
     int size=0;
     QueueNode *node;
     for(node=queue->front;node;node=node->next)
     {
-      size++;
+      	size++;
     }
-}
 }
  

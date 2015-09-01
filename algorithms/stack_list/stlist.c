@@ -3,7 +3,7 @@
 #include "stlist.h"
 /*额外提供创建节点和销毁节点的函数(自用)*/
 
-/*传入久节点，和数据，返回新节点*/
+/*传入旧节点，和数据，返回新节点*/
 static struct StackNode *creat_node(int data, struct StackNode *next)
 {
    struct StackNode *node=malloc(sizeof(struct StackNode));

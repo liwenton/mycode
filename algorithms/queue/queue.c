@@ -34,17 +34,25 @@ int  queue_empty(Queue *queue)
 void queue_push(int data, Queue *queue)
 {
     if(queue->rear >= queue->cap)
+	{
       queue->rear = 0;
+	}
+
     queue->size++;
-    queue->arr[queue->rear++]=data;
+
+    queue->arr[(queue->rear)++]=data;
 }
 
 int  queue_pop(Queue *queue)
 {
     if(queue->front >= queue->cap)
+	{
        queue->front = 0;
+	}
+
     queue->size--;
-    return queue->arr[queue->front++];
+
+    return queue->arr[(queue->front)++];
 }
 
 int  queue_front(Queue *queue)
@@ -53,6 +61,7 @@ int  queue_front(Queue *queue)
        queue->front = 0;
     return queue->arr[queue->front];
 }
+
 int  queue_size(Queue *queue)
 {
    return queue->size;
