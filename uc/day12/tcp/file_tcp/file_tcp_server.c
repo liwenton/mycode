@@ -6,7 +6,39 @@
 #include<sys/socket.h>
 #include<arpa/inet.h>
 #include<pthread.h>
-#include<time.h>
+#include<sys/types.h>
+#include<sys/stat.h>
+
+#define FILE_NAME_LEN	40
+
+typedef struct
+{
+	int size;
+	char name[FILE_NAME_LEN];
+}file_attr;
+
+
+int send_file(int send_fd, char *pathname)
+{
+	int ret = -1;
+	struct stat file_stat;
+	file_attr file;
+
+	memset((void *)file.name, 0, FILE_NAME_LEN);
+	
+	ret = access(pathname,R_OK);
+	{
+		printf("access\n");
+		return -1;
+	}
+	
+	stat(pathname,&file_stat);
+	file.size = file_stat.st_size;
+	strcpy((void *)file.name, pathname);
+	write(send_fd, &file, sizeof(file));
+	return 0;
+}
+
 
 void *client_thread(void *arg)
 {
@@ -26,18 +58,8 @@ void *client_thread(void *arg)
 	getpeername(connfd, &client_addr, &len);
   	printf("客户端%s成功连接\n",inet_ntoa(((struct sockaddr_in *)&client_addr)->sin_addr));
 
-  	char buf[100] = {0};
-	ticks = time(NULL);
-	time_str = ctime(&ticks);
-	if(time_str == NULL)
-	{
-		printf("get time faild\n");
-		pthread_exit((void*)NULL);
-	}
-	snprintf(buf, sizeof(buf), "%s", time_str);
-	printf("%s\n", buf);
-	write(connfd, buf, strlen(buf));
-	sleep(5);
+	send_file(connfd, "dp2pcs.pdf");
+
   	close(connfd);
 	printf("退出线程 :%d\n", pthread_id);	
 	pthread_exit((void*)NULL);
