@@ -11,7 +11,7 @@ int main(){
   struct sockaddr_in addr;
   addr.sin_family=AF_INET;
   addr.sin_port=htons(2222);//端口需要处理
-  addr.sin_addr.s_addr=inet_addr("192.168.1.8");
+  addr.sin_addr.s_addr=inet_addr("192.168.5.103");
   int res=connect(sockfd,(struct sockaddr*)&addr,sizeof(addr));
   if(res==-1)perror("connect"),exit(-1);
   printf("connect ok\n");

@@ -8,8 +8,11 @@
 #include<pthread.h>
 #include<sys/types.h>
 #include<sys/stat.h>
+#include<fcntl.h>
 
 #define FILE_NAME_LEN	40
+#define FILE_BUFF_LEN	1400
+
 
 typedef struct
 {
@@ -17,25 +20,72 @@ typedef struct
 	char name[FILE_NAME_LEN];
 }file_attr;
 
+typedef struct
+{
+	file_attr attr;
+	char *content;
+}file_send;
 
+//
 int send_file(int send_fd, char *pathname)
 {
+	int index = 0;
 	int ret = -1;
+	int file_fd;
+	int save_fd;
+	int file_len = 0;
+	int file_size = 0;
+	char file_buffer[FILE_BUFF_LEN] = {0};
+	char save_path[FILE_NAME_LEN] = {0};
 	struct stat file_stat;
-	file_attr file;
+	file_send file;
 
-	memset((void *)file.name, 0, FILE_NAME_LEN);
+	memset((void *)file.attr.name, 0, FILE_NAME_LEN);
 	
 	ret = access(pathname,R_OK);
+	if(ret == -1)
 	{
 		printf("access\n");
 		return -1;
 	}
 	
+	file_fd = open(pathname, O_RDONLY);
+	if(file_fd == -1)
+	{
+		printf("open\n");
+		return -1;
+	}
+	
 	stat(pathname,&file_stat);
-	file.size = file_stat.st_size;
-	strcpy((void *)file.name, pathname);
-	write(send_fd, &file, sizeof(file));
+	file.attr.size = file_stat.st_size;
+	strcpy((void *)file.attr.name, pathname);
+
+	file.content = malloc(file_stat.st_size);
+	memset(file.content, 0, file_stat.st_size);
+
+	write(send_fd, &file.attr, sizeof(file.attr));
+
+	while(1)
+	{
+		file_len = read(file_fd, file.content + file_size, FILE_BUFF_LEN);
+		if(file_len == 0)
+		{
+			break;
+		}
+		write(send_fd, file.content + file_size, FILE_BUFF_LEN);
+		file_size += file_len;
+	}
+
+	/*
+	snprintf(save_path, FILE_NAME_LEN, "../%s", file.attr.name);
+	save_fd = open(save_path, O_RDWR|O_CREAT);
+	write(save_fd, file.content, file.attr.size);	
+	close(save_fd);
+	*/
+
+	//write(send_fd, file.content, file.attr.size);
+	close(file_fd);
+	free(file.content);
 	return 0;
 }
 
@@ -46,7 +96,6 @@ void *client_thread(void *arg)
 	int connfd = -1;
 	int len = 0;
 	int pthread_id;
-	time_t ticks;
 	char *time_str = NULL;
 
 	pthread_id = pthread_self();
